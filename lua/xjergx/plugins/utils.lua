@@ -1,5 +1,20 @@
 return {
   {
+    'anuvyklack/animation.nvim',
+    dependencies = {
+      'anuvyklack/middleclass',
+    },
+    keys = {
+      {
+        '<leader>aa',
+        function()
+          require('alpha.animations').redraw_buffer()
+        end,
+      },
+    },
+  },
+
+  {
     'yutkat/confirm-quit.nvim',
     event = 'CmdlineEnter',
     opts = {},
@@ -142,5 +157,25 @@ return {
         extensions = {},
       }
     end,
+  },
+
+  {
+    'smjonas/inc-rename.nvim',
+    config = function()
+      require('inc_rename').setup()
+    end,
+  },
+
+  {
+    'rachartier/tiny-inline-diagnostic.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('tiny-inline-diagnostic').setup()
+    end,
+  },
+
+  {
+    'declancm/cinnamon.nvim',
+    config = true,
   },
 }

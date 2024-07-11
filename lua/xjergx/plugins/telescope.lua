@@ -22,9 +22,16 @@ return {
       },
     },
     config = function()
+      local actions = require 'telescope.actions'
+      local open_with_trouble = require('trouble.sources.telescope').open
+      local add_to_trouble = require('trouble.sources.telescope').add
       local gfh_actions = require('telescope').extensions.git_file_history.actions
       require('telescope').setup {
         defaults = {
+          mappings = {
+            i = { ['<c-t>'] = open_with_trouble },
+            n = { ['<c-t>'] = open_with_trouble },
+          },
           prompt_prefix = '🔍 ',
           layout_strategy = 'horizontal',
           layout_config = {
@@ -44,8 +51,6 @@ return {
         pickers = {
           find_files = {
             prompt_prefix = '🔍 ',
-            --[[   borderchars = { '', '', '', '', '', '', '', '' }, ]]
-            -- theme = "ivy",
           },
         },
         extensions = {
@@ -83,6 +88,10 @@ return {
       vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = 'Old files' })
       vim.keymap.set('n', '<leader>f/', builtin.grep_string, { desc = 'Grep string' })
       vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
+      -- vim.keymap.set('n', '<leader>fe', builtin.extensions.nerdy.nerd, { desc = 'Nerd' })
+      vim.keymap.set('n', '<leader>fj', builtin.jumplist, { desc = 'Jumplist' })
+      vim.keymap.set('n', '<leader>ft', builtin.tags, { desc = 'Tags' })
+      vim.keymap.set('n', '<leader>ft', builtin.colorscheme, { desc = 'Themes' })
       -- vim.keymap.set('n', '<leader>fi', '')
 
       vim.keymap.set('n', '<leader>/', function()
