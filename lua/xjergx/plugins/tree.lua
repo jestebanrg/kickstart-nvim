@@ -15,6 +15,14 @@ return {
         winbar = true,
         statusline = true,
       },
+      filesystem = {
+        filtered_items = {
+          visible = true, -- Muestra archivos ocultos
+          hide_dotfiles = false, -- No ocultar archivos que comienzan con un punto (.)
+          hide_gitignored = false, -- No ocultar archivos ignorados por git
+        },
+        -- Otras configuraciones que desees
+      },
     }
   end,
 }

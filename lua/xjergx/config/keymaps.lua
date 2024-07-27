@@ -40,5 +40,9 @@ keymap('n', '<C-j>', '<CMD>:wincmd j<CR>', options 'Window Down')
 keymap('n', '<C-k>', '<CMD>:wincmd k<CR>', options 'Window Up')
 keymap('n', '<C-l>', '<CMD>:wincmd l<CR>', options 'Window Right')
 
+-- ===== Split ======
+keymap('n', '<leader>vs', '<CMD>:vsplit<CR>', options 'Vertical Split')
+keymap('n', '<leader>hs', '<CMD>:split<CR>', options 'Horizontal Split')
+
 -- ======= GIT ========
 keymap('n', '<leader>fl', '<CMD>:LazyGit<CR>', options 'LazyGit')

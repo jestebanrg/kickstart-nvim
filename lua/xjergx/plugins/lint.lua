@@ -14,6 +14,7 @@ return {
         typescript = { 'eslint' },
         typescriptreact = { 'eslint' },
         typescriptvue = { 'eslint' },
+        c_sharp = { 'cspell' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

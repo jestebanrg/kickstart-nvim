@@ -178,4 +178,19 @@ return {
     'declancm/cinnamon.nvim',
     config = true,
   },
+
+  {
+    'folke/ts-comments.nvim',
+    opts = {
+      line_mapping = '<leader>cc',
+      comment_empty = false,
+      comment_placeholder = '',
+    },
+    event = 'VeryLazy',
+    enabled = vim.fn.has 'nvim-0.10.0' == 1,
+  },
+
+  {
+    'NvChad/nvim-colorizer.lua',
+  },
 }
