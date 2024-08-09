@@ -4,7 +4,7 @@ return {
     dependencies = {
       'mfussenegger/nvim-dap',
       'nvim-neotest/nvim-nio',
-      -- 'theHamsta/nvim-dap-virtual-text',
+      'theHamsta/nvim-dap-virtual-text',
     },
   },
 
@@ -17,6 +17,7 @@ return {
     config = function()
       local dap = require 'dap'
       local dapui = require 'dapui'
+      local dap_virtual_text = require 'nvim-dap-virtual-text'
 
       dapui.setup {
         layouts = {
@@ -60,6 +61,15 @@ return {
             DOTNET_ENVIRONMENT = 'Development',
           },
         },
+      }
+
+      dap_virtual_text.setup {
+        enabled = true, -- Habilitar virtual text
+        enabled_commands = true, -- Habilitar comandos como DapVirtualTextToggle
+        highlight_changed_variables = true, -- Resaltar variables cambiadas
+        highlight_new_as_changed = true, -- Resaltar nuevas variables como cambiadas
+        show_stop_reason = true, -- Mostrar razón de la pausa
+        commented = false, -- No mostrar el virtual text como comentario
       }
       --simbols for debugger
       vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = 'DapBreakpoint', linehl = '', numhl = '' })

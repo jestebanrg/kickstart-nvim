@@ -3,6 +3,18 @@ local options = function(desc)
   return { noremap = true, silent = true, desc = desc }
 end
 
+-- Diagnostic keymaps
+keymap('n', '[d', vim.diagnostic.goto_prev, options 'Go to previous [D]iagnostic message')
+keymap('n', ']d', vim.diagnostic.goto_next, options 'Go to next [D]ikeymapge')
+keymap('n', '<leader>e', vim.diagnostic.open_float, options 'Show diagnokeymapessages')
+keymap('n', '<leader>q', vim.diagnostic.setloclist, options 'Open diagnostic [Q]uickfix list')
+
+--  See `:help wincmd` for a list of all window commands
+keymap('n', '<C-h>', '<C-w><C-h>', options 'Move focus to the left window')
+keymap('n', '<C-l>', '<C-w><C-l>', options 'Move focus to the right window')
+keymap('n', '<C-j>', '<C-w><C-j>', options 'Move focus to the lower window')
+keymap('n', '<C-k>', '<C-w><C-k>', options 'Move focus to the upper window')
+
 --save file
 keymap({ 'n', 'v', 'i' }, '<C-s>', '<CMD>:w<CR><ESC>', options 'Save File')
 keymap({ 'n', 'v', 'i' }, '<C-s>', '<CMD>:w<CR><ESC>', options 'Save File')
@@ -46,3 +58,8 @@ keymap('n', '<leader>hs', '<CMD>:split<CR>', options 'Horizontal Split')
 
 -- ======= GIT ========
 keymap('n', '<leader>fl', '<CMD>:LazyGit<CR>', options 'LazyGit')
+
+-- ====== Tiny Code Actions ======
+keymap('n', '<leader>ca', function()
+  require('tiny-code-action').code_action()
+end, options 'Code Action')

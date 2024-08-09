@@ -138,4 +138,20 @@ return {
   {
     'xiyaowong/transparent.nvim',
   },
+  { 'nocksock/bloop-vim', lazy = false, name = 'bloop' },
+  {
+    '0xstepit/flow.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    name = 'flow',
+  },
+  { 'profesorpaiche/toytiza.nvim', lazy = false, name = 'toytiza' },
+  {
+    'pauchiner/pastelnight.nvim',
+    lazy = false,
+    name = 'pastelnight',
+    priority = 1000,
+    opts = {},
+  },
 }
